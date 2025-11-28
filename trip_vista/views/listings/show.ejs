@@ -1,0 +1,17 @@
+<% layout('layout') -%>
+<div class="row">
+  <div class="col-md-8">
+    <img src="<%= listing.images[0] || 'https://via.placeholder.com/900x500?text=Listing' %>" class="img-fluid mb-3">
+    <h2><%= listing.title %></h2>
+    <p><strong>Location:</strong> <%= listing.location %></p>
+    <p><strong>Price:</strong> ₹<%= listing.pricePerNight %> / night</p>
+    <p><%= listing.description %></p>
+  </div>
+  <div class="col-md-4">
+    <div class="card p-3">
+      <h5>Book this stay</h5>
+      <p>Simple demo card — integrate payments or bookings as needed.</p>
+      <button class="btn btn-success">Book</button>
+    </div>
+  </div>
+</div>

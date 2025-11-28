@@ -1,0 +1,22 @@
+<% layout('layout') -%>
+<h1 class="mb-4">Explore Destinations</h1>
+
+<div class="row">
+  <% if (listings && listings.length) { %>
+    <% listings.forEach(l => { %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="<%= l.images[0] || 'https://via.placeholder.com/600x350?text=Listing' %>" class="card-img-top" alt="<%= l.title %>">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><%= l.title %></h5>
+            <p class="card-text"><%= l.location %></p>
+            <p class="mt-auto"><strong>₹<%= l.pricePerNight %></strong> / night</p>
+            <a href="/listings/<%= l._id %>" class="btn btn-sm btn-primary mt-2">View</a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <p>No listings yet — try adding one.</p>
+  <% } %>
+</div>
